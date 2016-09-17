@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ProyectoEmpresaMultinivel-ear">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="ProyectoEmpresaMultinivel-web.war" deploy-path="/" handle="module:/resource/ProyectoEmpresaMultinivel-web/ProyectoEmpresaMultinivel-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProyectoEmpresaMultinivel-ejb.jar" deploy-path="/" handle="module:/resource/ProyectoEmpresaMultinivel-ejb/ProyectoEmpresaMultinivel-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProyectoEmpresaMultinivel-jpa.jar" deploy-path="/lib" handle="module:/resource/ProyectoEmpresaMultinivel-jpa/ProyectoEmpresaMultinivel-jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
