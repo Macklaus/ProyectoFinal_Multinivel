@@ -26,7 +26,7 @@ import co.edu.eam.ingesoft.pa2.negocio.entidades.parametricas.PromocionProducto;
 public class CatalogoProducto implements Serializable{
 
 	@Id
-	@Column(name = "ID", precision = 6)
+	@Column(name = "CATALOGO_PRODUCTOS_ID", precision = 6)
 	private int id;
 	
 	/**

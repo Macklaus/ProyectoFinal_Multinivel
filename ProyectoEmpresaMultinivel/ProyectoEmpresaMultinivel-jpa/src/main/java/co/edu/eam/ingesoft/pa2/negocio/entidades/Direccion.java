@@ -44,12 +44,6 @@ public class Direccion implements Serializable{
 	private Ciudad ciudad;
 	
 	/**
-	 * descripcion de la direccion
-	 */
-	@Column(name = "DESCRIPCION", nullable = false, length = 100)
-	private String descripcion;
-	
-	/**
 	 * Constructor...
 	 */
 	public Direccion() {
@@ -62,11 +56,10 @@ public class Direccion implements Serializable{
 	 * @param ciudad
 	 * @param descripcion
 	 */
-	public Direccion(Persona persona, Ciudad ciudad, String descripcion) {
+	public Direccion(Persona persona, Ciudad ciudad) {
 		super();
 		this.persona = persona;
 		this.ciudad = ciudad;
-		this.descripcion = descripcion;
 	}
 
 	/**
@@ -112,21 +105,6 @@ public class Direccion implements Serializable{
 	 */
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
-	}
-
-	/**
-	 * @return El atributo descripcion
-	 */
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	/**
-	 * Establece el valor del atributo descripcion
-	 * @param descripcion: EL descripcion a establecer
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 	
 	

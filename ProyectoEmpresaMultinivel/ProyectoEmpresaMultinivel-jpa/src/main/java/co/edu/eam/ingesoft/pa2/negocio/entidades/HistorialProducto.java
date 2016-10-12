@@ -4,6 +4,7 @@
 package co.edu.eam.ingesoft.pa2.negocio.entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entidad con los datos historicos de los productos
@@ -38,6 +41,10 @@ public class HistorialProducto implements Serializable{
 	 */
 	@Column(name = "PRECIO_PRODUCTO", precision = 10, scale = 4, nullable = false)
 	private double precio;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "FECHA", nullable = false)
+	private Date fecha;
 
 	/**
 	 * Constructor...
@@ -51,10 +58,11 @@ public class HistorialProducto implements Serializable{
 	 * @param producto
 	 * @param precio
 	 */
-	public HistorialProducto(Producto producto, double precio) {
+	public HistorialProducto(Producto producto, double precio, Date fecha) {
 		super();
 		this.producto = producto;
 		this.precio = precio;
+		this.fecha = fecha;
 	}
 
 	/**
@@ -100,6 +108,21 @@ public class HistorialProducto implements Serializable{
 	 */
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	/**
+	 * @return El atributo fecha
+	 */
+	public Date getFecha() {
+		return fecha;
+	}
+
+	/**
+	 * Establece el valor del atributo fecha
+	 * @param fecha: EL fecha a establecer
+	 */
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 	
 	

@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entidad con los datos historicos de una persona
@@ -24,7 +26,7 @@ import javax.persistence.Table;
 public class HistorialPersona implements Serializable{
 
 	@Id
-	@Column(name = "HISTORIAL_PERSONA_ID")
+	@Column(name = "HISTORIAL_ID", precision = 10)
 	private long id;
 	
 	/**
@@ -37,14 +39,16 @@ public class HistorialPersona implements Serializable{
 	/**
 	 * fecha en la inicio la persona con los nuevos datos historicos
 	 */
+	@Temporal(TemporalType.DATE)
 	@Column(name = "FECHA_INICIO", nullable = false)
 	private Date fechaInicio;
 	
 	/**
 	 * fecha en la que termino la persona con estos datos historicos
 	 */
-	@Column(name = "FECHA_FIN", nullable = false)
-	private Date FechaFin;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "FECHA_FINAL", nullable = false)
+	private Date fechaFin;
 	
 	/**
 	 * nivel en la que esta o estuvo la persona
@@ -53,27 +57,39 @@ public class HistorialPersona implements Serializable{
 	private int nivel;
 	
 	/**
+	 * la comision ganada por la persona entre la 
+	 * fecha inicio y la fecha final
+	 */
+	@Column(name = "COMISION_GANADA", precision = 11, scale = 4, nullable = false)
+	private double comisionGanada;
+	
+	/**
 	 * Constructor...
 	 */
 	public HistorialPersona() {
 		super();
 	}
-	
-	
+
+
 
 	/**
 	 * Constructor...
+	 * @param id
 	 * @param persona
 	 * @param fechaInicio
 	 * @param fechaFin
 	 * @param nivel
+	 * @param comisionGanada
 	 */
-	public HistorialPersona(Persona persona, Date fechaInicio, Date fechaFin, int nivel) {
+	public HistorialPersona(long id, Persona persona, Date fechaInicio, Date fechaFin, int nivel,
+			double comisionGanada) {
 		super();
+		this.id = id;
 		this.persona = persona;
 		this.fechaInicio = fechaInicio;
-		FechaFin = fechaFin;
+		this.fechaFin = fechaFin;
 		this.nivel = nivel;
+		this.comisionGanada = comisionGanada;
 	}
 
 
@@ -127,7 +143,7 @@ public class HistorialPersona implements Serializable{
 	 * @return El atributo fechaFin
 	 */
 	public Date getFechaFin() {
-		return FechaFin;
+		return fechaFin;
 	}
 
 	/**
@@ -135,7 +151,7 @@ public class HistorialPersona implements Serializable{
 	 * @param fechaFin: EL fechaFin a establecer
 	 */
 	public void setFechaFin(Date fechaFin) {
-		FechaFin = fechaFin;
+		this.fechaFin = fechaFin;
 	}
 
 	/**
@@ -151,6 +167,25 @@ public class HistorialPersona implements Serializable{
 	 */
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
+	}
+
+
+
+	/**
+	 * @return El atributo comisionGanada
+	 */
+	public double getComisionGanada() {
+		return comisionGanada;
+	}
+
+
+
+	/**
+	 * Establece el valor del atributo comisionGanada
+	 * @param comisionGanada: EL comisionGanada a establecer
+	 */
+	public void setComisionGanada(double comisionGanada) {
+		this.comisionGanada = comisionGanada;
 	}
 	
 	

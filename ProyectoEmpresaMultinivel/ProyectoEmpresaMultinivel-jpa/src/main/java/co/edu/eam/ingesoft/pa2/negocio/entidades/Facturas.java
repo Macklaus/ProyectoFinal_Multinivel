@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import co.edu.eam.ingesoft.pa2.negocio.enumeraciones.EstadoFacturaEnum;
 
@@ -34,7 +36,7 @@ public class Facturas implements Serializable{
 	private int id;
 	
 	@OneToOne
-	@JoinColumn(name = "PEDIDO_ID", updatable = false, insertable = false, nullable = false, unique = true)
+	@JoinColumn(name = "PEDIDO_ID", nullable = false, unique = true)
 	private Pedido pedido;
 	
 	/**
@@ -47,6 +49,7 @@ public class Facturas implements Serializable{
 	 * Fecha limite que tiene una persona para pagar 
 	 * la factura
 	 */
+	@Temporal(TemporalType.DATE)
 	@Column(name = "FECHA_LIMITE", nullable = false)
 	private Date fechaLimite;
 	

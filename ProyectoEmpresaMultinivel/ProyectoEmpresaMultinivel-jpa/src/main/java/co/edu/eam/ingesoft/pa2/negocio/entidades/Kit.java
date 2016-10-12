@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class Kit implements Serializable{
 
 	@Id
-	@Column(name = "KIT_ID", precision = 4)
+	@Column(name = "KIT_ID", precision = 3)
 	private int id;
 	
 	@ManyToOne

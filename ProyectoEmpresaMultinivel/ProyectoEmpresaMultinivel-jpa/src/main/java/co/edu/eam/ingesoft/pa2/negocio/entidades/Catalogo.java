@@ -35,9 +35,6 @@ public class Catalogo implements Serializable{
 	@Column(name = "FECHA_FIN", nullable = false)
 	private Date fechaFin;
 	
-	@Column(name = "DESCRIPCION", nullable = true)
-	private String descripcion;
-	
 	/**
 	 * Constructor...
 	 */
@@ -51,11 +48,10 @@ public class Catalogo implements Serializable{
 	 * @param fechaFin
 	 * @param descripcion
 	 */
-	public Catalogo(Date fechaInicio, Date fechaFin, String descripcion) {
+	public Catalogo(Date fechaInicio, Date fechaFin) {
 		super();
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
-		this.descripcion = descripcion;
 	}
 
 	/**
@@ -101,21 +97,6 @@ public class Catalogo implements Serializable{
 	 */
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
-	}
-
-	/**
-	 * @return El atributo descripcion
-	 */
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	/**
-	 * Establece el valor del atributo descripcion
-	 * @param descripcion: EL descripcion a establecer
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 	
 	

@@ -25,7 +25,7 @@ import javax.persistence.Table;
 public class PedidoCatalogoProducto implements Serializable{
 
 	@Id
-	@Column(name = "PEDIDO_CATALOGO_PRODUCTO_ID", precision = 10)
+	@Column(name = "PEDIDO_PRODUCTO_ID", precision = 10)
 	private int id;
 	
 	/**
@@ -54,6 +54,9 @@ public class PedidoCatalogoProducto implements Serializable{
 	@Column(name = "PRECIO_PRODUCTO", precision = 10, scale = 4, nullable = false)
 	private double precio;
 	
+	@Column(name = "HOJA", precision = 2, nullable = false)
+	private int hoja;
+	
 	/**
 	 * Constructor...
 	 */
@@ -68,12 +71,13 @@ public class PedidoCatalogoProducto implements Serializable{
 	 * @param cantidad
 	 * @param precio
 	 */
-	public PedidoCatalogoProducto(Pedido pedido, CatalogoProducto producto, int cantidad, double precio) {
+	public PedidoCatalogoProducto(Pedido pedido, CatalogoProducto producto, int cantidad, double precio, int hoja) {
 		super();
 		this.pedido = pedido;
 		this.producto = producto;
 		this.cantidad = cantidad;
 		this.precio = precio;
+		this.hoja = hoja;
 	}
 
 	/**
@@ -149,6 +153,21 @@ public class PedidoCatalogoProducto implements Serializable{
 	 */
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	/**
+	 * @return El atributo hoja
+	 */
+	public int getHoja() {
+		return hoja;
+	}
+
+	/**
+	 * Establece el valor del atributo hoja
+	 * @param hoja: EL hoja a establecer
+	 */
+	public void setHoja(int hoja) {
+		this.hoja = hoja;
 	}
 	
 	

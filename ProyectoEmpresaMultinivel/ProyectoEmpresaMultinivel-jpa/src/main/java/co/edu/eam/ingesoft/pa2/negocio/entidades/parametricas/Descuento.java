@@ -22,7 +22,7 @@ import javax.persistence.Table;
 public class Descuento implements Serializable{
 	
 	@Id
-	@Column(name = "DESCUANTO_ID", precision = 2)
+	@Column(name = "DESCUENTO_ID", precision = 2)
 	private int id;
 	
 	@Column(name = "PORCENTAJE", precision = 4, scale = 3)

@@ -26,7 +26,7 @@ import javax.persistence.TemporalType;
 public class PremioPersona implements Serializable{
 
 	@Id
-	@Column(name = "PREMIO_PERSONA_ID")
+	@Column(name = "PREMIO_PERSONA_ID", precision = 13)
 	private long id;
 	
 	/**

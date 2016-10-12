@@ -29,7 +29,7 @@ import co.edu.eam.ingesoft.pa2.negocio.enumeraciones.EstadoPersonaEnum;
 public class Persona implements Serializable{
 
 	@Id
-	@Column(name = "PERSONA_ID")
+	@Column(name = "PERSONA_ID", precision = 13)
 	private long id;
 	
 	/**
@@ -38,13 +38,6 @@ public class Persona implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "DESCUENTO_ID", nullable = false)
 	private Descuento descuento;
-	
-	/**
-	 * Persona que lo afilio
-	 */
-	@OneToOne
-	@JoinColumn(name = "PADRINO", nullable = true)
-	private Persona padrino;
 	
 	@Column(name = "NOMBRE", length = 40, nullable = false)
 	private String nombre;
@@ -56,8 +49,15 @@ public class Persona implements Serializable{
 	private long telefono;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "ESTADO")
+	@Column(name = "ESTADO", nullable = false)
 	private EstadoPersonaEnum estado;
+	
+	/**
+	 * Persona que lo afilio
+	 */
+	@OneToOne
+	@JoinColumn(name = "PADRINO", nullable = true)
+	private Persona padrino;
 	
 	/**
 	 * Constructos...

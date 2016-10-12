@@ -32,8 +32,8 @@ public class Producto implements Serializable{
 	@JoinColumn(name = "TIPO_PRODUCTO_ID", nullable = false)
 	private TipoProducto tipo;
 	
-	@Column(name = "DESCRIPCION", length = 100, nullable = false)
-	private String descripcion;
+	@Column(name = "PRECIO_VENTA", precision = 10, scale = 4, nullable = false)
+	private double precioVenta;
 	
 	/**
 	 * Costo de la producción del producto
@@ -41,8 +41,11 @@ public class Producto implements Serializable{
 	@Column(name = "PRECIO_NETO", precision = 10, scale = 4, nullable = false)
 	private double precioNeto;
 	
-	@Column(name = "PRECIO_VENTA", precision = 10, scale = 4, nullable = false)
-	private double precioVenta;
+	/**
+	 * cantidad de unidades de este producto
+	 */
+	@Column(name = "CANTIDAD", precision = 5, nullable = false)
+	private int cantidad;
 	
 	/**
 	 * Constructor...
@@ -58,12 +61,12 @@ public class Producto implements Serializable{
 	 * @param precioNeto
 	 * @param precioVenta
 	 */
-	public Producto(TipoProducto tipo, String descripcion, double precioNeto, double precioVenta) {
+	public Producto(TipoProducto tipo, double precioNeto, double precioVenta, int cantidad) {
 		super();
 		this.tipo = tipo;
-		this.descripcion = descripcion;
 		this.precioNeto = precioNeto;
 		this.precioVenta = precioVenta;
+		this.cantidad = cantidad;
 	}
 
 	/**
@@ -97,21 +100,6 @@ public class Producto implements Serializable{
 	}
 
 	/**
-	 * @return El atributo descripcion
-	 */
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	/**
-	 * Establece el valor del atributo descripcion
-	 * @param descripcion: EL descripcion a establecer
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	/**
 	 * @return El atributo precioNeto
 	 */
 	public double getPrecioNeto() {
@@ -139,6 +127,21 @@ public class Producto implements Serializable{
 	 */
 	public void setPrecioVenta(double precioVenta) {
 		this.precioVenta = precioVenta;
+	}
+
+	/**
+	 * @return El atributo cantidad
+	 */
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	/**
+	 * Establece el valor del atributo cantidad
+	 * @param cantidad: EL cantidad a establecer
+	 */
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 	
 }

@@ -1,62 +1,68 @@
 /**
  *
  */
-package co.edu.eam.ingesoft.pa2.negocio.entidades.parametricas;
+package co.edu.eam.ingesoft.pa2.negocio.entidades.descripciones;
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import co.edu.eam.ingesoft.pa2.negocio.entidades.Premio;
+
 /**
- * Entidad que describe la promocion que tiene un producto
+ *
  * @author Sebastian Cardona Morales<br/>
  *         email: krdona-k44@hotmail.com<br/>
- *         Fecha: 31/08/2016<br/>
+ *         Fecha: 12/10/2016<br/>
  */
 @Entity
-@Table(name = "PROMOCION_PRODUCTOS")
-public class PromocionProducto implements Serializable{
+@Table(name = "DESCRIPCION_PREMIOS")
+public class DescripcionPremio implements Serializable{
 
 	@Id
-	@Column(name = "PROMOCION_PRODUCTO_ID", precision = 3)
-	private int id;
+	@OneToOne
+	@JoinColumn(name = "PREMIO_ID")
+	private Premio premio;
 	
-	
-	@Column(name = "DESCRIPCION", nullable = false)
+	@Column(name = "DESCRIPCION", length = 250, nullable = false)
 	private String descripcion;
 	
 	/**
 	 * Constructor...
 	 */
-	public PromocionProducto() {
+	public DescripcionPremio() {
 		super();
 	}
 
 	/**
 	 * Constructor...
+	 * @param premio
 	 * @param descripcion
 	 */
-	public PromocionProducto(String descripcion) {
+	public DescripcionPremio(Premio premio, String descripcion) {
 		super();
+		this.premio = premio;
 		this.descripcion = descripcion;
 	}
 
 	/**
-	 * @return El atributo id
+	 * @return El atributo premio
 	 */
-	public int getId() {
-		return id;
+	public Premio getPremio() {
+		return premio;
 	}
 
 	/**
-	 * Establece el valor del atributo id
-	 * @param id: EL id a establecer
+	 * Establece el valor del atributo premio
+	 * @param premio: EL premio a establecer
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setPremio(Premio premio) {
+		this.premio = premio;
 	}
 
 	/**
@@ -73,6 +79,6 @@ public class PromocionProducto implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
+	
 	
 }

@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class Departamento implements Serializable{
 
 	@Id
-	@Column(name = "DEPARTAMENT_ID", precision = 3)
+	@Column(name = "DEPARTAMENTO_ID", precision = 3)
 	private int id;
 	
 	@ManyToOne

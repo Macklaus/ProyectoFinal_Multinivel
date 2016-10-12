@@ -19,7 +19,7 @@ import javax.persistence.Table;
  *         Fecha: 31/08/2016<br/>
  */
 @Entity
-@Table(name = "PCT_BONIFICACIONES")
+@Table(name = "PCT_BONIFICACION")
 public class PCTBonificacion implements Serializable{
 
 	@Id

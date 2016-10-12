@@ -16,7 +16,7 @@ import javax.persistence.Table;
  *         Fecha: 31/08/2016<br/>
  */
 @Entity
-@Table(name = "PREMIO_EFECTIVO")
+@Table(name = "PREMIO_EFECTIVOS")
 public class PremioEfectivo extends Premio implements Serializable{
 
 	@Column(name = "VALOR", precision = 12, scale = 4, nullable = false)
