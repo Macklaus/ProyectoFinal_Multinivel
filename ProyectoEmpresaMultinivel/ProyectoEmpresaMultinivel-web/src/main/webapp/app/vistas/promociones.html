@@ -13,11 +13,39 @@
 					<option>Cuidado Cabello</option>
 				</select>
 				<button class="btn waves-effect waves-light" type="submit"
-				name="action" ng-click="">
-				<i class="material-icons right">Promoci&oacute;n</i>
-			</button>
+					name="action" ng-click="">
+					<i class="material-icons right">Filtrar</i>
+				</button>
 			</div>
-			
+			<table class="table highlight responsive-table centered">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Precio</th>
+						<th>Cantidad</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="it in arregloitems">
+						<td>{{$index}}</td>
+						<td>{{it.producto.nombre}}</td>
+						<td>{{it.producto.precio}}</td>
+						<td>{{it.cantidad}}</td>
+						<td>{{it.cantidad*it.producto.precio}}</td>
+						<td>
+							<button class="btn waves-effect waves-light" type="submit"
+								name="action" ng-click="quitar(it)">
+								<i class="material-icons right">Promoci&oacute;n</i>
+							</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
 		</div>
 	</div>
 </div>
