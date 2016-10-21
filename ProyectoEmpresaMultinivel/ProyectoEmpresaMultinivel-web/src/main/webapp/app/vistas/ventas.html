@@ -1,6 +1,35 @@
 <div class="row" ng-controller="ventaController">
 
 	<div class="col-md-12">
-	Estamos en ventas
+		<div class="row">
+
+
+			<table class="table highlight responsive-table centered">
+				<thead>
+					<tr>
+						<th># Pedido</th>
+						<th>Fecha L&iacute;mite</th>
+						<th>Valor Total</th>
+						<th>Estado</th>
+						<th>Bot&oacute;n para cancelar o aceptar</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="it in arregloitems">
+						<td>{{$index}}</td>
+						<td>{{it.producto.nombre}}</td>
+						<td>{{it.producto.precio}}</td>
+						<td>{{it.cantidad}}</td>
+						<td>
+							<button class="btn waves-effect waves-light" type="submit"
+								name="action" value="Cancelar" ng-click="cancelarPedido(it)">
+								<i class="material-icons right">Quitar</i>
+							</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
