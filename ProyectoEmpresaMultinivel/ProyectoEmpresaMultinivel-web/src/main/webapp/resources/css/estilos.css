@@ -1,0 +1,23 @@
+body{
+	background-color: #F1F1F1;
+}
+.menu{
+	width: 70%;
+	margin: 0 auto;
+}
+.tabla{
+	margin: 0 auto;
+}
+.tabla td{
+	background-color: #F1F1F1;
+}
+.campo{
+	background-color: #F1F1F1 !important;
+}
+.ui-tabmenu .ui-tabmenu-nav {
+	background-color: rgb(3,169,244) !important;
+}
+.cuadro{
+	margin: 5% auto;
+/* 	text-align: center; */
+}

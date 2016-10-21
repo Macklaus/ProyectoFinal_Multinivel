@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/Body.xhtml" >
+<ui:define name="contenido">
+<div class="cuadro">
+	<p:panelGrid styleClass="tabla ui-noborder">
+        <p:row>
+            <p:column colspan="1">
+            	<p:outputLabel value="Nombre:" />
+			</p:column>
+            <p:column colspan="1">
+            	<p:inputText id="nombre" styleClass="campo" />
+           		<p:watermark for="nombre" value="Nombre" />
+            </p:column>
+        </p:row>
+        <p:row>
+            <p:column colspan="1">
+            	<p:outputLabel value="Fecha Inicio:" />
+			</p:column>
+            <p:column colspan="1">
+            	<p:calendar showOn="button" pattern="dd/mm/yyyy" placeholder="Fecha Inicial" />
+            </p:column>
+        </p:row>
+	    <p:row>
+            <p:column colspan="1">
+            	<p:outputLabel value="Fecha Final:" />
+			</p:column>
+            <p:column colspan="1">
+            	<p:calendar showOn="button" pattern="dd/MM/yyyy" placeholder="Fecha Final" />
+            </p:column>
+        </p:row>
+        <p:row>
+            <p:column colspan="1">
+            	<p:outputLabel value="Descripcion:" />
+			</p:column>
+            <p:column colspan="1">
+            	<p:inputTextarea id="descripcion" placeholder="Descripcion" styleClass="campo" />
+           	</p:column>
+        </p:row>
+        <p:row>
+        	<p:column colspan="2" style="text-align: center">
+	        	<p:button value="Registrar" icon="ui-icon-star" />
+	        	<p:button value="Ver Catalogos" outcome="VerCatalogos.xhtml" icon="ui-icon-star" />
+	        	<p:button value="Agregar Productos" outcome="AgregarProductos" icon="ui-icon-star" />
+        	</p:column>
+        </p:row>
+	</p:panelGrid>
+</div>
+</ui:define>
+</ui:composition>
+</html>
