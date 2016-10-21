@@ -4,22 +4,24 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+      
 <h:head>
+<h:outputStylesheet library="css" name="estilos.css" />
 </h:head> 
 <h:body>
 <div>
 	<h:form>
-	<p:tabMenu activeIndex="#{param.i}" >
-	    <p:menuitem value="Inicio" outcome="Index" icon="ui-icon-star">
+	<p:tabMenu activeIndex="#{param.i}" styleClass="menu">
+	    <p:menuitem value="Inicio" outcome="Index" icon="ui-icon-home">
 	        <f:param name="i" value="0" />
 	    </p:menuitem>
-	    <p:menuitem value="Catalogos" outcome="Catalogos" icon="ui-icon-search">
+	    <p:menuitem value="Catalogos" outcome="Catalogos" icon="ui-icon-note">
 	        <f:param name="i" value="1" />
 	    </p:menuitem>
-	    <p:menuitem value="Productos" outcome="Productos" icon="ui-icon-document">
+	    <p:menuitem value="Productos" outcome="Productos" icon="ui-icon-suitcase">
 	        <f:param name="i" value="2" />
 	    </p:menuitem>
-	    <p:menuitem value="Logout" icon="ui-icon-person">
+	    <p:menuitem value="Logout" icon="ui-icon-power">
 	        <f:param name="i" value="3" />
 	    </p:menuitem>
 	</p:tabMenu>

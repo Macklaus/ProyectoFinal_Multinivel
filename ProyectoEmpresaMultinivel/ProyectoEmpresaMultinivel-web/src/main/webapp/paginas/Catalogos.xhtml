@@ -9,15 +9,14 @@
 
 <ui:composition template="/templates/Body.xhtml" >
 <ui:define name="contenido">
-<h1>CATALOGOS</h1>
-<div>
-	<p:panelGrid style="margin: 0 auto">
+<div class="cuadro">
+	<p:panelGrid styleClass="tabla ui-noborder">
         <p:row>
             <p:column colspan="1">
             	<p:outputLabel value="Nombre:" />
 			</p:column>
             <p:column colspan="1">
-            	<p:inputText id="nombre" />
+            	<p:inputText id="nombre" styleClass="campo" />
            		<p:watermark for="nombre" value="Nombre" />
             </p:column>
         </p:row>
@@ -42,7 +41,7 @@
             	<p:outputLabel value="Descripcion:" />
 			</p:column>
             <p:column colspan="1">
-            	<p:inputTextarea id="descripcion" placeholder="Descripcion" />
+            	<p:inputTextarea id="descripcion" placeholder="Descripcion" styleClass="campo" />
            	</p:column>
         </p:row>
         <p:row>

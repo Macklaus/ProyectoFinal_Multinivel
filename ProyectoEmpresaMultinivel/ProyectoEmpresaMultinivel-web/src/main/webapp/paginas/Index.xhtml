@@ -9,14 +9,14 @@
 
 <ui:composition template="/templates/Body.xhtml" >
 <ui:define name="contenido">
-<h1>INICIO</h1>
-<p:panelGrid style="margin: 0 auto">
+<div class="cuadro">
+<p:panelGrid styleClass="tabla ui-noborder">
 	<p:row>
 		<p:column>
 			<p:outputLabel value="Usuario:" />
 		</p:column>
 		<p:column>
-			<p:inputText id="usuario" />
+			<p:inputText id="usuario" styleClass="campo" />
 			<p:watermark for="usuario" value="Usuario" />
 		</p:column>
 	</p:row>
@@ -25,7 +25,7 @@
 			<p:outputLabel value="Contrasena:" />
 		</p:column>
 		<p:column>
-			<p:password id="pass" />
+			<p:password id="pass" styleClass="campo" />
 			<p:watermark for="pass" value="Contrasena" />
 		</p:column>
 	</p:row>
@@ -35,6 +35,7 @@
 		</p:column>
 	</p:row>
 </p:panelGrid>
+</div>
 </ui:define>
 </ui:composition>
 </html>

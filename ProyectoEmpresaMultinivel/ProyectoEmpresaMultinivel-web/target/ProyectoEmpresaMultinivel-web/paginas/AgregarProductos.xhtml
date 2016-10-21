@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/Body.xhtml" >
+<ui:define name="contenido">
+<p></p>
+<div>
+	<p:panelGrid style="margin: 0 auto" >
+		<p:row>
+			<p:column>
+				<p:outputLabel value="Catalogo:"/>
+			</p:column>
+			<p:column colspan="2">
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Seleccione uno" itemValue="" />
+		            <f:selectItem itemLabel="Catalogo1" itemValue="Cocina" />
+		            <f:selectItem itemLabel="Catalogo2" itemValue="Aseo Hogar" />
+		            <f:selectItem itemLabel="Catalogo3" itemValue="Aseo Personal" />
+		            <f:selectItem itemLabel="Catalogo4" itemValue="Cuidado de la piel" />
+		            <f:selectItem itemLabel="Catalogo5" itemValue="Cuidado del cabello" />
+				</p:selectOneMenu>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<p:outputLabel value="Tipo Producto:" />
+			</p:column>
+			<p:column>
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Seleccione uno" itemValue="" />
+		            <f:selectItem itemLabel="Cocina" itemValue="Cocina" />
+		            <f:selectItem itemLabel="Aseo Hogar" itemValue="Aseo Hogar" />
+		            <f:selectItem itemLabel="Aseo Personal" itemValue="Aseo Personal" />
+		            <f:selectItem itemLabel="Cuidado de la piel" itemValue="Cuidado de la piel" />
+		            <f:selectItem itemLabel="Cuidado del cabello" itemValue="Cuidado del cabello" />
+				</p:selectOneMenu>
+			</p:column>
+			<p:column>
+				<p:button value="Filtrar" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column colspan="3">
+				<p:pickList value="#{prod.cities2}" var="cities" itemLabel="#{cities}" itemValue="#{cities}" >
+					<p:column style="width:90%;">
+			            <h:outputText value="#{cities}" />
+			        </p:column>
+				</p:pickList>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column colspan="3" style="text-align: center">
+				<p:button value="Registrar" icon="ui-icon-star" />
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</div>
+</ui:define>
+</ui:composition>
+</html>
